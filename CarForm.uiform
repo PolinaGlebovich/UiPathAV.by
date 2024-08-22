@@ -1,0 +1,53 @@
+﻿{
+  "Metadata": {
+    "Id": "216905e1-a3a9-4299-8455-bc550655385b",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "NewForm",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Car brand",
+        "tableView": true,
+        "key": "brandForm",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Model",
+        "tableView": true,
+        "key": "modelForm",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Price from",
+        "tableView": true,
+        "key": "priceMinForm",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Price to",
+        "tableView": true,
+        "key": "priceMaxForm",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}

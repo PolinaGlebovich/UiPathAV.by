@@ -1,0 +1,27 @@
+﻿{
+  "Metadata": {
+    "Id": "d4aa65e5-7677-4ed2-a84b-df7a58820397",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "MinMaxPrice",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Submit",
+        "action": "event",
+        "showValidations": false,
+        "disableOnInvalid": true,
+        "tableView": false,
+        "key": "submit",
+        "type": "button",
+        "input": true
+      }
+    ]
+  }
+}
