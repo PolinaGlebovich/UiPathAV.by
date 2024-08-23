@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="MinMaxPriceCalculate" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="804,604.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MinMaxPriceCalculate" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="836,2088" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -131,19 +131,19 @@
       <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="558.4,476" sap2010:WorkflowViewState.IdRef="Sequence_86">
+  <Sequence sap:VirtualizedContainerService.HintSize="846.4,2023.2" sap2010:WorkflowViewState.IdRef="Sequence_86">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="496,387.2" sap2010:WorkflowViewState.IdRef="Sequence_85">
+    <Sequence sap:VirtualizedContainerService.HintSize="784,1934.4" sap2010:WorkflowViewState.IdRef="Sequence_85">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign " sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_21">
+      <Assign DisplayName="Assign " sap:VirtualizedContainerService.HintSize="721.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_21">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Double">
             <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_49">GlobalVariablesNamespace.GlobalVariables.minPrice</CSharpReference>
@@ -155,7 +155,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_22">
+      <Assign sap:VirtualizedContainerService.HintSize="721.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_22">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Double">
             <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">GlobalVariablesNamespace.GlobalVariables.maxPrice</CSharpReference>
@@ -167,175 +167,150 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,48" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each (To find the most expensive car and the cheapest car)" sap:VirtualizedContainerService.HintSize="721.6,1595.2" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="688,1406.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Int32" Name="currentPrice" />
+                <Variable x:TypeArguments="x:String" Name="priceString" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="625.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">
+                    <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">currentPrice</CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86">Convert.ToInt32(CurrentRow["Price"])</CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+              <If sap:VirtualizedContainerService.HintSize="625.6,1204" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_127">Convert.ToDouble(CurrentRow["Price"]) &lt; GlobalVariablesNamespace.GlobalVariables.minPrice</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="592,937.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="529.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Double">
+                          <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">GlobalVariablesNamespace.GlobalVariables.minPrice</CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Double">
+                          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_128">Convert.ToDouble(CurrentRow["Price"])</CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="529.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="sd:DataRow">
+                          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">GlobalVariablesNamespace.GlobalVariables.minPriceRow</CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="sd:DataRow">
+                          <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">CurrentRow</CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:IfElseIfV2 DisplayName="Else If" sap:VirtualizedContainerService.HintSize="529.6,621.6" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                      <ui:IfElseIfV2.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_129">Convert.ToDouble(CurrentRow["Price"]) &gt; GlobalVariablesNamespace.GlobalVariables.maxPrice</CSharpValue>
+                        </InArgument>
+                      </ui:IfElseIfV2.Condition>
+                      <ui:IfElseIfV2.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </ui:IfElseIfV2.Else>
+                      <ui:IfElseIfV2.ElseIfs>
+                        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                      </ui:IfElseIfV2.ElseIfs>
+                      <ui:IfElseIfV2.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,307.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Double">
+                                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">GlobalVariablesNamespace.GlobalVariables.maxPrice</CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Double">
+                                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_130">Convert.ToDouble(CurrentRow["Price"])</CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="sd:DataRow">
+                                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">GlobalVariablesNamespace.GlobalVariables.maxPriceRow</CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="sd:DataRow">
+                                <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">CurrentRow</CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ui:IfElseIfV2.Then>
+                    </ui:IfElseIfV2>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+        <ui:ForEachRow.DataTable>
+          <InArgument x:TypeArguments="sd:DataTable">
+            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">GlobalVariablesNamespace.GlobalVariables.dt_Auto</CSharpValue>
+          </InArgument>
+        </ui:ForEachRow.DataTable>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <TryCatch.Try>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each (To find the most expensive car and the cheapest car)" sap:VirtualizedContainerService.HintSize="721.6,1572" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
-            <ui:ForEachRow.Body>
-              <ActivityAction x:TypeArguments="sd:DataRow">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="688,1406.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:Int32" Name="currentPrice" />
-                    <Variable x:TypeArguments="x:String" Name="priceString" />
-                  </Sequence.Variables>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="625.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">
-                        <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">currentPrice</CSharpReference>
-                      </OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">
-                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86">Convert.ToInt32(CurrentRow["Price"])</CSharpValue>
-                      </InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <If sap:VirtualizedContainerService.HintSize="625.6,1204" sap2010:WorkflowViewState.IdRef="If_1">
-                    <If.Condition>
-                      <InArgument x:TypeArguments="x:Boolean">
-                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_127">Convert.ToDouble(CurrentRow["Price"]) &lt; GlobalVariablesNamespace.GlobalVariables.minPrice</CSharpValue>
-                      </InArgument>
-                    </If.Condition>
-                    <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="592,937.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="529.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Double">
-                              <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">GlobalVariablesNamespace.GlobalVariables.minPrice</CSharpReference>
-                            </OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Double">
-                              <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_128">Convert.ToDouble(CurrentRow["Price"])</CSharpValue>
-                            </InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign sap:VirtualizedContainerService.HintSize="529.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="sd:DataRow">
-                              <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">GlobalVariablesNamespace.GlobalVariables.minPriceRow</CSharpReference>
-                            </OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="sd:DataRow">
-                              <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">CurrentRow</CSharpValue>
-                            </InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <ui:IfElseIfV2 DisplayName="Else If" sap:VirtualizedContainerService.HintSize="529.6,621.6" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
-                          <ui:IfElseIfV2.Condition>
-                            <InArgument x:TypeArguments="x:Boolean">
-                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_129">Convert.ToDouble(CurrentRow["Price"]) &gt; GlobalVariablesNamespace.GlobalVariables.maxPrice</CSharpValue>
-                            </InArgument>
-                          </ui:IfElseIfV2.Condition>
-                          <ui:IfElseIfV2.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </Sequence>
-                          </ui:IfElseIfV2.Else>
-                          <ui:IfElseIfV2.ElseIfs>
-                            <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
-                          </ui:IfElseIfV2.ElseIfs>
-                          <ui:IfElseIfV2.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,307.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Double">
-                                    <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">GlobalVariablesNamespace.GlobalVariables.maxPrice</CSharpReference>
-                                  </OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Double">
-                                    <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_130">Convert.ToDouble(CurrentRow["Price"])</CSharpValue>
-                                  </InArgument>
-                                </Assign.Value>
-                              </Assign>
-                              <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_7">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="sd:DataRow">
-                                    <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">GlobalVariablesNamespace.GlobalVariables.maxPriceRow</CSharpReference>
-                                  </OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="sd:DataRow">
-                                    <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">CurrentRow</CSharpValue>
-                                  </InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </Sequence>
-                          </ui:IfElseIfV2.Then>
-                        </ui:IfElseIfV2>
-                      </Sequence>
-                    </If.Then>
-                    <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
-                    </If.Else>
-                  </If>
-                </Sequence>
-              </ActivityAction>
-            </ui:ForEachRow.Body>
-            <ui:ForEachRow.DataTable>
-              <InArgument x:TypeArguments="sd:DataTable">
-                <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">GlobalVariablesNamespace.GlobalVariables.dt_Auto</CSharpValue>
-              </InArgument>
-            </ui:ForEachRow.DataTable>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:ForEachRow>
-        </TryCatch.Try>
-        <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,106.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ActivityAction x:TypeArguments="s:Exception">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-              </ActivityAction.Argument>
-            </ActivityAction>
-          </Catch>
-        </TryCatch.Catches>
-      </TryCatch>
+      </ui:ForEachRow>
     </Sequence>
   </Sequence>
 </Activity>

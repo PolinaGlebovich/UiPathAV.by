@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="InputDataCar" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="804,1643.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="InputDataCar" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="804,1914.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -41,6 +41,7 @@
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -131,190 +132,231 @@
       <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="599.2,1578.4" sap2010:WorkflowViewState.IdRef="Sequence_88">
+  <Sequence sap:VirtualizedContainerService.HintSize="636,1849.6" sap2010:WorkflowViewState.IdRef="Sequence_88">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:UiElement" Name="outputElement">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">NApplicationCard_1</x:String>
+            <x:String x:Key="SourcePropertyName">OutUiElement</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Use Browser Chrome: Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с про" sap:VirtualizedContainerService.HintSize="536.8,1489.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="2b80957a-5394-4e79-b26b-301bc0d6f4da" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1249.6" sap2010:WorkflowViewState.IdRef="Sequence_89">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'Brand'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="DebuggerApi" OutUiElement="{x:Null}" ScopeIdentifier="2b80957a-5394-4e79-b26b-301bc0d6f4da" SecureText="{x:Null}" Timeout="{x:Null}" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://av.by/" CVScreenId="8504d4d7-d858-45cd-9ebf-65981e94eddd" CvTextArea="209, 710, 65, 22" CvTextArgument="MapKa" CvType="Text" DesignTimeRectangle="184, 426, 377, 55" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl name='p-6-0-2-brand' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='p-6-0-2-brand' tag='BUTTON' type='button' class='dropdown__control dropdown-floatlabel' aaname='Марка' check:innerText='Марка&amp;#xD;&amp;#xA;Марка' /&gt;" Guid="bfbf0b31-e87b-498a-9645-dac1c70f6c12" ImageBase64="" InformativeScreenshot="a58b79083c5bad2001e199f9981b787c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">
-                    <CSharpValue.Result>
-                      <OutArgument x:TypeArguments="x:String" />
-                    </CSharpValue.Result>GlobalVariablesNamespace.GlobalVariables.brand + "[k(Enter)]"</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-            </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click " sap:VirtualizedContainerService.HintSize="353.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_13" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b80957a-5394-4e79-b26b-301bc0d6f4da" Timeout="{x:Null}" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://cars.av.by/" CVScreenId="717353c8-b95c-4f38-b8de-23714c30f83a" CvTextArea="766, 545, 32, 10" CvTextArgument="Aic6oa" CvType="Text" DesignTimeRectangle="561, 614, 316, 47" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl class='dropdown__listbutton' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown__listbutton' tag='BUTTON' type='button' aaname='' /&gt;" Guid="2fa65441-7824-4cde-8030-3eb73f84e077" InformativeScreenshot="7d24da3f838782f9fb82cbc87b3be96b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CVScreenId="717353c8-b95c-4f38-b8de-23714c30f83a" CvTextArea="768, 518, 40, 11" CvTextArgument="Monenb" CvType="Text" DesignTimeRectangle="579, 576, 97, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-3-model' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-3-model' tag='SPAN' type='' aaname=' Модель' check:innerText='Модель' /&gt;" Guid="711831a5-d0ba-4b96-bff4-9f55e46a4639" SearchSteps="Selector, FuzzySelector, CV" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="573.6,1760.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Use Browser Chrome: Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с про" sap:VirtualizedContainerService.HintSize="536.8,1506.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" ScopeGuid="2b80957a-5394-4e79-b26b-301bc0d6f4da" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1249.6" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'Brand'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="DebuggerApi" OutUiElement="{x:Null}" ScopeIdentifier="2b80957a-5394-4e79-b26b-301bc0d6f4da" SecureText="{x:Null}" Timeout="{x:Null}" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://av.by/" CVScreenId="8504d4d7-d858-45cd-9ebf-65981e94eddd" CvTextArea="209, 710, 65, 22" CvTextArgument="MapKa" CvType="Text" DesignTimeRectangle="184, 426, 377, 55" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl name='p-6-0-2-brand' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='p-6-0-2-brand' tag='BUTTON' type='button' class='dropdown__control dropdown-floatlabel' aaname='Марка' check:innerText='Марка&amp;#xD;&amp;#xA;Марка' /&gt;" Guid="bfbf0b31-e87b-498a-9645-dac1c70f6c12" ImageBase64="" InformativeScreenshot="a58b79083c5bad2001e199f9981b787c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                  </uix:NTypeInto.Target>
+                  <uix:NTypeInto.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>GlobalVariablesNamespace.GlobalVariables.brand + "[k(Enter)]"</CSharpValue>
+                    </InArgument>
+                  </uix:NTypeInto.Text>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click " sap:VirtualizedContainerService.HintSize="353.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_13" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="2b80957a-5394-4e79-b26b-301bc0d6f4da" Timeout="{x:Null}" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://cars.av.by/" CVScreenId="717353c8-b95c-4f38-b8de-23714c30f83a" CvTextArea="766, 545, 32, 10" CvTextArgument="Aic6oa" CvType="Text" DesignTimeRectangle="561, 614, 316, 47" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl class='dropdown__listbutton' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown__listbutton' tag='BUTTON' type='button' aaname='' /&gt;" Guid="2fa65441-7824-4cde-8030-3eb73f84e077" InformativeScreenshot="7d24da3f838782f9fb82cbc87b3be96b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="717353c8-b95c-4f38-b8de-23714c30f83a" CvTextArea="768, 518, 40, 11" CvTextArgument="Monenb" CvType="Text" DesignTimeRectangle="579, 576, 97, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-3-model' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-3-model' tag='SPAN' type='' aaname=' Модель' check:innerText='Модель' /&gt;" Guid="711831a5-d0ba-4b96-bff4-9f55e46a4639" SearchSteps="Selector, FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NSelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'Model'" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NSelectItem_8" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="2b80957a-5394-4e79-b26b-301bc0d6f4da" Timeout="{x:Null}" Version="V3">
+                  <uix:NSelectItem.Item>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_163">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>GlobalVariablesNamespace.GlobalVariables.model</CSharpValue>
+                    </InArgument>
+                  </uix:NSelectItem.Item>
+                  <uix:NSelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="50">
+                      <x:String>Любой</x:String>
+                      <x:String>Amarok</x:String>
+                      <x:String>Arteon</x:String>
+                      <x:String>Atlas</x:String>
+                      <x:String>Atlas Cross Sport</x:String>
+                      <x:String>Beetle</x:String>
+                      <x:String>Bora</x:String>
+                      <x:String>Caddy</x:String>
+                      <x:String>Caddy MAXI</x:String>
+                      <x:String>California</x:String>
+                      <x:String>Caravelle</x:String>
+                      <x:String>Derby</x:String>
+                      <x:String>e-Bora</x:String>
+                      <x:String>e-Caddy</x:String>
+                      <x:String>e-Golf</x:String>
+                      <x:String>e-Lavida</x:String>
+                      <x:String>Eos</x:String>
+                      <x:String>EuroVan</x:String>
+                      <x:String>Fox</x:String>
+                      <x:String>Golf</x:String>
+                      <x:String>Golf Alltrack</x:String>
+                      <x:String>Golf GTE</x:String>
+                      <x:String>Golf GTI</x:String>
+                      <x:String>Golf Plus</x:String>
+                      <x:String>Golf R</x:String>
+                      <x:String>Golf Sportsvan</x:String>
+                      <x:String>ID.3</x:String>
+                      <x:String>ID.4</x:String>
+                      <x:String>ID.6</x:String>
+                      <x:String>Jetta</x:String>
+                      <x:String>Lupo</x:String>
+                      <x:String>Multivan</x:String>
+                      <x:String>Passat</x:String>
+                      <x:String>Passat (USA)</x:String>
+                      <x:String>Passat Alltrack</x:String>
+                      <x:String>Passat CC</x:String>
+                      <x:String>Phaeton</x:String>
+                      <x:String>Pointer</x:String>
+                      <x:String>Polo</x:String>
+                      <x:String>Polo GTI</x:String>
+                      <x:String>Polo Sedan</x:String>
+                      <x:String>Routan</x:String>
+                      <x:String>Santana</x:String>
+                      <x:String>Scirocco</x:String>
+                      <x:String>Sharan</x:String>
+                      <x:String>T-Cross</x:String>
+                      <x:String>T-Roc</x:String>
+                      <x:String>Taos</x:String>
+                      <x:String>Tavendor</x:String>
+                      <x:String>Teramont</x:String>
                     </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <uix:NSelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'Model'" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NSelectItem_8" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="2b80957a-5394-4e79-b26b-301bc0d6f4da" Timeout="{x:Null}" Version="V3">
-              <uix:NSelectItem.Item>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_163">
-                    <CSharpValue.Result>
-                      <OutArgument x:TypeArguments="x:String" />
-                    </CSharpValue.Result>GlobalVariablesNamespace.GlobalVariables.model</CSharpValue>
+                  </uix:NSelectItem.Items>
+                  <uix:NSelectItem.Target>
+                    <uix:TargetAnchorable BrowserURL="https://cars.av.by/" CVScreenId="29aa8340-678d-4737-8a59-525190b7d549" CvTextArea="768, 518, 40, 11" CvTextArgument="Monenb" CvType="Text" DesignTimeRectangle="655, 684, 282, 44" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentname='p-6-0-3-model' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='p-6-0-3-model' tag='SPAN' type='' class='dropdown-floatlabel__box' aaname='' check:innerText='Модель&amp;#xD;&amp;#xA;Модель' /&gt;" Guid="d432953c-7526-4792-b5ab-8c632e2439aa" ImageBase64="" InformativeScreenshot="4cc2d63d82dcd5ca991bc5b5c4c93594.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="c3f7e028-d3f0-4014-ab07-16df77d64e42" CvElementArea="717, 697, 19, 19" CvTextArea="653, 698, 65, 18" CvTextArgument="Monenb" CvType="ArrowButton" DesignTimeRectangle="655, 699, 77, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-3-model' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-3-model' tag='SPAN' type='' aaname=' Модель' check:innerText='Модель' /&gt;" Guid="e53c7caa-c3d8-4585-9c90-238d773fb6bb" SearchSteps="Selector, FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NSelectItem.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NSelectItem>
+                <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'Price from'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="DebuggerApi" OutUiElement="{x:Null}" ScopeIdentifier="2b80957a-5394-4e79-b26b-301bc0d6f4da" SecureText="{x:Null}" Timeout="{x:Null}" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter?brands[0][brand]=1216&amp;brands[0][model]=1223&amp;price_usd[min]=10000&amp;price_usd[max]=50000" CVScreenId="2a109f0a-a14e-40c3-b136-8f92bd30a415" CvTextArea="579, 560, 57, 17" CvTextArgument="10000" CvType="Text" DesignTimeRectangle="769, 561, 42, 14" DesignTimeScaleFactor="0.625" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='richinput-control__value' aaname='' /&gt;" Guid="372c24ab-4a94-45f9-9f74-2da3be0f1824" ImageBase64="" InformativeScreenshot="89c0a9937dcf657b851f25f3ea7fe1de.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="77524792-781d-4b16-9ce0-1036307ee7d2" CvTextArea="767, 562, 40, 10" CvTextArgument="LeHa OT" CvType="Text" DesignTimeRectangle="769, 554, 61, 27" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='__next' tag='LABEL' /&gt;" Guid="51fa5993-af7b-47d4-b6f9-806811ba757f" SearchSteps="Selector">
+                            <uix:Target.FuzzySelectorArgument>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">
+                                  <Literal.Result>
+                                    <OutArgument x:TypeArguments="x:String" />
+                                  </Literal.Result>&lt;webctrl parentid='__next' tag='LABEL' type='' class='richinput-control__box' aaname='' check:innerText='Цена от' /&gt;</Literal>
+                              </InArgument>
+                            </uix:Target.FuzzySelectorArgument>
+                          </uix:Target>
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <uix:NTypeInto.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>GlobalVariablesNamespace.GlobalVariables.priceFrom</CSharpValue>
+                    </InArgument>
+                  </uix:NTypeInto.Text>
+                </uix:NTypeInto>
+                <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'Price to'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,243.2" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="DebuggerApi" OutUiElement="{x:Null}" ScopeIdentifier="2b80957a-5394-4e79-b26b-301bc0d6f4da" SecureText="{x:Null}" Timeout="{x:Null}" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter?brands[0][brand]=1216&amp;brands[0][model]=1223&amp;price_usd[min]=10000&amp;price_usd[max]=50000" CVScreenId="9d2c5f84-b7fb-4f26-b71c-fabe42d9ea13" CvTextArea="719, 560, 58, 17" CvTextArgument="50000" CvType="Text" DesignTimeRectangle="720, 556, 85, 27" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl idx='2' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='richinput-control__value' tag='INPUT' type='text' aaname='' /&gt;" Guid="4baf4da1-0f7a-4f87-aee7-5f39d4b2b0ff" InformativeScreenshot="7140039715c03eabe4a0990892b87b5d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="720, 534, 122, 55" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='2' parentid='__next' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='__next' tag='LABEL' class='richinput-control__box' aaname='' check:innerText='до' /&gt;" Guid="6fbaf945-ac13-49f3-b048-f606b2ede687" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <uix:NTypeInto.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>GlobalVariablesNamespace.GlobalVariables.priceTo</CSharpValue>
+                    </InArgument>
+                  </uix:NTypeInto.Text>
+                </uix:NTypeInto>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.OutUiElement>
+            <OutArgument x:TypeArguments="ui:UiElement">
+              <CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">outputElement</CSharpReference>
+            </OutArgument>
+          </uix:NApplicationCard.OutUiElement>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAL6SURBVGhD1ZpPitRAFMZ7KTg2XkDwAC48wqy9gTeYG3iDTutGN+oFZty5ctwJLsadi8F2p0jRuNBhkLQMMooMsb6aFHQ/vqp6lcTp1Ac/aJJ6Ve9L/Us6mTDtVGZ3OvvyZFqZ4+ncGEttaa4YtGluzM1b5LJTfd5t0wvrZmVuuwBe4Rgw12yObbqbuv7I3LUFtnGlc6mRa5v2pXDlcUIUHDP1Rk/YAxjnrOBowVB3ybsJSwqUgJvY07ldbcjJIrCr02Tkq06ch+a4yPG/hoGBQVafW4+Xzd7haXOwOGsWJ3+a1flF44XfOIZzKIOyrI4O1DDATqi58/xr8+z9z42ENYIZxLI6c+hloDqqsxOXQh2sbi2dDODKYUgMJdTVtTeyDaCh5epv2/RwQp1dTGQb+B/Je6Encid4lgFMVo0wL/btJJ3Z8Q1effqlNo42WNsh1AbQvSkhyXsvvtF4sPf6VGUkVodEbQDLXkz7H8/U3Z+q62h5TuMYKgOpq48hwuJiIMmYtBdDZQC7Z0gY711WD8TE9pAHb37QOInKwKG9wiFhsrIYDU8ji4K2V1UGFt/Dm1bOhJMgNiRMdhYjURmIiZXXgnEeE4uRbNUAiImVl/Q20PfWOCZWXqIyENt8es2Bg/AcgFiMRGUgtgrhVoHFaEhtaCxGojKANTmk1e+LTsMI+0DqtoLFSVQGUqsFeojFxYj1qheLk6gMgNTWj+HA4hipoePFYiVqA7FNx8vdjdqJyeIBzuU8ybE6JGoDILb1rwtGcJX98wB+p8Y7E8tBkmUAcyF2WzG0WA6SLANAs3oMJda+JNsAuCoTrG1JJwOe2bu6baqbUv8psTYlvQwA9AaeCXKExGEecyr2nMzak/Q24IERJIMHkQ9ioiNhHINRlGE79/2XJ+7cOrIMAwZKerUkcX/uFv73+uW7YHZy9Lj3ZMW/Yir+JR9U6Hsy45KHin/RDRX9qYFX2xOjXVYx1IMfe6zLf27Tzo2tfm7jlnn3uY0hn9tMJv8A+/ShRapKXKEAAAAASUVORK5CYII=" InformativeScreenshot="a6e40b1ee98db47cb1783b07148b623f.jpg" Selector="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" Title="Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке." Url="https://cars.av.by/" />
+          </uix:NApplicationCard.TargetApp>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BrowserOperationException" sap:VirtualizedContainerService.HintSize="540,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BrowserOperationException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BrowserOperationException" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn">
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_165">"Error opening site: " + exception.Message</CSharpValue>
                 </InArgument>
-              </uix:NSelectItem.Item>
-              <uix:NSelectItem.Items>
-                <scg:List x:TypeArguments="x:String" Capacity="50">
-                  <x:String>Любой</x:String>
-                  <x:String>Amarok</x:String>
-                  <x:String>Arteon</x:String>
-                  <x:String>Atlas</x:String>
-                  <x:String>Atlas Cross Sport</x:String>
-                  <x:String>Beetle</x:String>
-                  <x:String>Bora</x:String>
-                  <x:String>Caddy</x:String>
-                  <x:String>Caddy MAXI</x:String>
-                  <x:String>California</x:String>
-                  <x:String>Caravelle</x:String>
-                  <x:String>Derby</x:String>
-                  <x:String>e-Bora</x:String>
-                  <x:String>e-Caddy</x:String>
-                  <x:String>e-Golf</x:String>
-                  <x:String>e-Lavida</x:String>
-                  <x:String>Eos</x:String>
-                  <x:String>EuroVan</x:String>
-                  <x:String>Fox</x:String>
-                  <x:String>Golf</x:String>
-                  <x:String>Golf Alltrack</x:String>
-                  <x:String>Golf GTE</x:String>
-                  <x:String>Golf GTI</x:String>
-                  <x:String>Golf Plus</x:String>
-                  <x:String>Golf R</x:String>
-                  <x:String>Golf Sportsvan</x:String>
-                  <x:String>ID.3</x:String>
-                  <x:String>ID.4</x:String>
-                  <x:String>ID.6</x:String>
-                  <x:String>Jetta</x:String>
-                  <x:String>Lupo</x:String>
-                  <x:String>Multivan</x:String>
-                  <x:String>Passat</x:String>
-                  <x:String>Passat (USA)</x:String>
-                  <x:String>Passat Alltrack</x:String>
-                  <x:String>Passat CC</x:String>
-                  <x:String>Phaeton</x:String>
-                  <x:String>Pointer</x:String>
-                  <x:String>Polo</x:String>
-                  <x:String>Polo GTI</x:String>
-                  <x:String>Polo Sedan</x:String>
-                  <x:String>Routan</x:String>
-                  <x:String>Santana</x:String>
-                  <x:String>Scirocco</x:String>
-                  <x:String>Sharan</x:String>
-                  <x:String>T-Cross</x:String>
-                  <x:String>T-Roc</x:String>
-                  <x:String>Taos</x:String>
-                  <x:String>Tavendor</x:String>
-                  <x:String>Teramont</x:String>
-                </scg:List>
-              </uix:NSelectItem.Items>
-              <uix:NSelectItem.Target>
-                <uix:TargetAnchorable BrowserURL="https://cars.av.by/" CVScreenId="29aa8340-678d-4737-8a59-525190b7d549" CvTextArea="768, 518, 40, 11" CvTextArgument="Monenb" CvType="Text" DesignTimeRectangle="655, 684, 282, 44" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentname='p-6-0-3-model' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='p-6-0-3-model' tag='SPAN' type='' class='dropdown-floatlabel__box' aaname='' check:innerText='Модель&amp;#xD;&amp;#xA;Модель' /&gt;" Guid="d432953c-7526-4792-b5ab-8c632e2439aa" ImageBase64="" InformativeScreenshot="4cc2d63d82dcd5ca991bc5b5c4c93594.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CVScreenId="c3f7e028-d3f0-4014-ab07-16df77d64e42" CvElementArea="717, 697, 19, 19" CvTextArea="653, 698, 65, 18" CvTextArgument="Monenb" CvType="ArrowButton" DesignTimeRectangle="655, 699, 77, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-3-model' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='dropdown-floatlabel__value' parentname='p-6-0-3-model' tag='SPAN' type='' aaname=' Модель' check:innerText='Модель' /&gt;" Guid="e53c7caa-c3d8-4585-9c90-238d773fb6bb" SearchSteps="Selector, FuzzySelector, CV" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NSelectItem.Target>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </uix:NSelectItem>
-            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'Price from'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="DebuggerApi" OutUiElement="{x:Null}" ScopeIdentifier="2b80957a-5394-4e79-b26b-301bc0d6f4da" SecureText="{x:Null}" Timeout="{x:Null}" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter?brands[0][brand]=1216&amp;brands[0][model]=1223&amp;price_usd[min]=10000&amp;price_usd[max]=50000" CVScreenId="2a109f0a-a14e-40c3-b136-8f92bd30a415" CvTextArea="579, 560, 57, 17" CvTextArgument="10000" CvType="Text" DesignTimeRectangle="769, 561, 42, 14" DesignTimeScaleFactor="0.625" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='richinput-control__value' aaname='' /&gt;" Guid="372c24ab-4a94-45f9-9f74-2da3be0f1824" ImageBase64="" InformativeScreenshot="89c0a9937dcf657b851f25f3ea7fe1de.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CVScreenId="77524792-781d-4b16-9ce0-1036307ee7d2" CvTextArea="767, 562, 40, 10" CvTextArgument="LeHa OT" CvType="Text" DesignTimeRectangle="769, 554, 61, 27" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='__next' tag='LABEL' /&gt;" Guid="51fa5993-af7b-47d4-b6f9-806811ba757f" SearchSteps="Selector">
-                        <uix:Target.FuzzySelectorArgument>
-                          <InArgument x:TypeArguments="x:String">
-                            <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">
-                              <Literal.Result>
-                                <OutArgument x:TypeArguments="x:String" />
-                              </Literal.Result>&lt;webctrl parentid='__next' tag='LABEL' type='' class='richinput-control__box' aaname='' check:innerText='Цена от' /&gt;</Literal>
-                          </InArgument>
-                        </uix:Target.FuzzySelectorArgument>
-                      </uix:Target>
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">
-                    <CSharpValue.Result>
-                      <OutArgument x:TypeArguments="x:String" />
-                    </CSharpValue.Result>GlobalVariablesNamespace.GlobalVariables.priceFrom</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-            </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'Price to'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,243.2" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="DebuggerApi" OutUiElement="{x:Null}" ScopeIdentifier="2b80957a-5394-4e79-b26b-301bc0d6f4da" SecureText="{x:Null}" Timeout="{x:Null}" Version="V3">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://cars.av.by/filter?brands[0][brand]=1216&amp;brands[0][model]=1223&amp;price_usd[min]=10000&amp;price_usd[max]=50000" CVScreenId="9d2c5f84-b7fb-4f26-b71c-fabe42d9ea13" CvTextArea="719, 560, 58, 17" CvTextArgument="50000" CvType="Text" DesignTimeRectangle="720, 556, 85, 27" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl idx='2' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='richinput-control__value' tag='INPUT' type='text' aaname='' /&gt;" Guid="4baf4da1-0f7a-4f87-aee7-5f39d4b2b0ff" InformativeScreenshot="7140039715c03eabe4a0990892b87b5d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="720, 534, 122, 55" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='2' parentid='__next' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='__next' tag='LABEL' class='richinput-control__box' aaname='' check:innerText='до' /&gt;" Guid="6fbaf945-ac13-49f3-b048-f606b2ede687" SearchSteps="FuzzySelector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">
-                    <CSharpValue.Result>
-                      <OutArgument x:TypeArguments="x:String" />
-                    </CSharpValue.Result>GlobalVariablesNamespace.GlobalVariables.priceTo</CSharpValue>
-                </InArgument>
-              </uix:NTypeInto.Text>
-            </uix:NTypeInto>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAL6SURBVGhD1ZpPitRAFMZ7KTg2XkDwAC48wqy9gTeYG3iDTutGN+oFZty5ctwJLsadi8F2p0jRuNBhkLQMMooMsb6aFHQ/vqp6lcTp1Ac/aJJ6Ve9L/Us6mTDtVGZ3OvvyZFqZ4+ncGEttaa4YtGluzM1b5LJTfd5t0wvrZmVuuwBe4Rgw12yObbqbuv7I3LUFtnGlc6mRa5v2pXDlcUIUHDP1Rk/YAxjnrOBowVB3ybsJSwqUgJvY07ldbcjJIrCr02Tkq06ch+a4yPG/hoGBQVafW4+Xzd7haXOwOGsWJ3+a1flF44XfOIZzKIOyrI4O1DDATqi58/xr8+z9z42ENYIZxLI6c+hloDqqsxOXQh2sbi2dDODKYUgMJdTVtTeyDaCh5epv2/RwQp1dTGQb+B/Je6Encid4lgFMVo0wL/btJJ3Z8Q1effqlNo42WNsh1AbQvSkhyXsvvtF4sPf6VGUkVodEbQDLXkz7H8/U3Z+q62h5TuMYKgOpq48hwuJiIMmYtBdDZQC7Z0gY711WD8TE9pAHb37QOInKwKG9wiFhsrIYDU8ji4K2V1UGFt/Dm1bOhJMgNiRMdhYjURmIiZXXgnEeE4uRbNUAiImVl/Q20PfWOCZWXqIyENt8es2Bg/AcgFiMRGUgtgrhVoHFaEhtaCxGojKANTmk1e+LTsMI+0DqtoLFSVQGUqsFeojFxYj1qheLk6gMgNTWj+HA4hipoePFYiVqA7FNx8vdjdqJyeIBzuU8ybE6JGoDILb1rwtGcJX98wB+p8Y7E8tBkmUAcyF2WzG0WA6SLANAs3oMJda+JNsAuCoTrG1JJwOe2bu6baqbUv8psTYlvQwA9AaeCXKExGEecyr2nMzak/Q24IERJIMHkQ9ioiNhHINRlGE79/2XJ+7cOrIMAwZKerUkcX/uFv73+uW7YHZy9Lj3ZMW/Yir+JR9U6Hsy45KHin/RDRX9qYFX2xOjXVYx1IMfe6zLf27Tzo2tfm7jlnn3uY0hn9tMJv8A+/ShRapKXKEAAAAASUVORK5CYII=" InformativeScreenshot="a6e40b1ee98db47cb1783b07148b623f.jpg" Selector="&lt;html app='chrome.exe' title='Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке.' /&gt;" Title="Объявления о продаже автомобилей в Беларуси. Купить или продать автомобиль с пробегом, новый или б/у на Автомалиновке." Url="https://cars.av.by/" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
   </Sequence>
 </Activity>

@@ -4,7 +4,7 @@
     <x:Property Name="minUrl" Type="InOutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>804,1800</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>804,2143.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -47,6 +47,8 @@
       <x:String>System.Net.Mail</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -137,180 +139,213 @@
       <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="608,1735.2" sap2010:WorkflowViewState.IdRef="Sequence_91">
+  <Sequence sap:VirtualizedContainerService.HintSize="707.2,2078.4" sap2010:WorkflowViewState.IdRef="Sequence_92">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: explorer.exe" sap:VirtualizedContainerService.HintSize="545.6,1646.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="71ae94da-62c7-4483-8b1d-0bbc18b3d0fe" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1406.4" sap2010:WorkflowViewState.IdRef="Sequence_88">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign max Url" sap:VirtualizedContainerService.HintSize="449.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_23">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">maxUrl</CSharpReference>
-                </OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_139">GlobalVariablesNamespace.GlobalVariables.maxPriceRow.Field&lt;string&gt;("Url")</CSharpValue>
-                </InArgument>
-              </Assign.Value>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </Assign>
-            <Assign DisplayName="Assign min Url" sap:VirtualizedContainerService.HintSize="449.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_24">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_56">minUrl</CSharpReference>
-                </OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_150">GlobalVariablesNamespace.GlobalVariables.minPriceRow.Field&lt;string&gt;("Url")</CSharpValue>
-                </InArgument>
-              </Assign.Value>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </Assign>
-            <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" DisplayName="Output of the most expensive car" sap:VirtualizedContainerService.HintSize="449.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_7">
-              <ui:MessageBox.ChosenButton>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_57">GlobalVariablesNamespace.GlobalVariables.userChoice</CSharpReference>
-                </OutArgument>
-              </ui:MessageBox.ChosenButton>
-              <ui:MessageBox.Text>
-                <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_141">$"Самая дорогая машина:\nName: {GlobalVariablesNamespace.GlobalVariables.maxPriceRow["Name"]}\nUrl: {GlobalVariablesNamespace.GlobalVariables.maxPriceRow["Url"]}\nPrice: {GlobalVariablesNamespace.GlobalVariables.maxPriceRow["Price"]}\nХотите перейти по ссылке?"</CSharpValue>
-                </InArgument>
-              </ui:MessageBox.Text>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:MessageBox>
-            <If sap:VirtualizedContainerService.HintSize="449.6,389.6" sap2010:WorkflowViewState.IdRef="If_3">
-              <If.Condition>
-                <InArgument x:TypeArguments="x:Boolean">
-                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_142">GlobalVariablesNamespace.GlobalVariables.userChoice == "Yes"</CSharpValue>
-                </InArgument>
-              </If.Condition>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,194.4" sap2010:WorkflowViewState.IdRef="Sequence_58">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="644.8,1989.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="608,1735.2" sap2010:WorkflowViewState.IdRef="Sequence_91">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: explorer.exe" sap:VirtualizedContainerService.HintSize="545.6,1646.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="71ae94da-62c7-4483-8b1d-0bbc18b3d0fe" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1406.4" sap2010:WorkflowViewState.IdRef="Sequence_88">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="353.6,105.6" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Version="V3">
-                    <uix:NGoToUrl.Url>
+                  <Assign DisplayName="Assign max Url" sap:VirtualizedContainerService.HintSize="449.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_23">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">maxUrl</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_148">maxUrl</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_139">GlobalVariablesNamespace.GlobalVariables.maxPriceRow.Field&lt;string&gt;("Url")</CSharpValue>
                       </InArgument>
-                    </uix:NGoToUrl.Url>
-                  </uix:NGoToUrl>
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_64">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </If.Else>
-            </If>
-            <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" DisplayName="Output of the cheapest car" sap:VirtualizedContainerService.HintSize="449.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_10">
-              <ui:MessageBox.ChosenButton>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_58">GlobalVariablesNamespace.GlobalVariables.userChoice</CSharpReference>
-                </OutArgument>
-              </ui:MessageBox.ChosenButton>
-              <ui:MessageBox.Text>
-                <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_134">$"Самая дешевая машина:\nName: {GlobalVariablesNamespace.GlobalVariables.minPriceRow["Name"]}\nUrl: {GlobalVariablesNamespace.GlobalVariables.minPriceRow["Url"]}\nPrice: {GlobalVariablesNamespace.GlobalVariables.minPriceRow["Price"]}";</CSharpValue>
-                </InArgument>
-              </ui:MessageBox.Text>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:MessageBox>
-            <If sap:VirtualizedContainerService.HintSize="449.6,462.4" sap2010:WorkflowViewState.IdRef="If_4">
-              <If.Condition>
-                <InArgument x:TypeArguments="x:Boolean">
-                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_144">GlobalVariablesNamespace.GlobalVariables.userChoice == "Yes"</CSharpValue>
-                </InArgument>
-              </If.Condition>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,194.4" sap2010:WorkflowViewState.IdRef="Sequence_59">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="353.6,105.6" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Version="V3">
-                    <uix:NGoToUrl.Url>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <Assign DisplayName="Assign min Url" sap:VirtualizedContainerService.HintSize="449.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_24">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_56">minUrl</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_149">minUrl</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_150">GlobalVariablesNamespace.GlobalVariables.minPriceRow.Field&lt;string&gt;("Url")</CSharpValue>
                       </InArgument>
-                    </uix:NGoToUrl.Url>
-                  </uix:NGoToUrl>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" DisplayName="Output of the most expensive car" sap:VirtualizedContainerService.HintSize="449.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_7">
+                    <ui:MessageBox.ChosenButton>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_57">GlobalVariablesNamespace.GlobalVariables.userChoice</CSharpReference>
+                      </OutArgument>
+                    </ui:MessageBox.ChosenButton>
+                    <ui:MessageBox.Text>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_141">$"Самая дорогая машина:\nName: {GlobalVariablesNamespace.GlobalVariables.maxPriceRow["Name"]}\nUrl: {GlobalVariablesNamespace.GlobalVariables.maxPriceRow["Url"]}\nPrice: {GlobalVariablesNamespace.GlobalVariables.maxPriceRow["Price"]}\nХотите перейти по ссылке?"</CSharpValue>
+                      </InArgument>
+                    </ui:MessageBox.Text>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:MessageBox>
+                  <If sap:VirtualizedContainerService.HintSize="449.6,389.6" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_142">GlobalVariablesNamespace.GlobalVariables.userChoice == "Yes"</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,194.4" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="353.6,105.6" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Version="V3">
+                          <uix:NGoToUrl.Url>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_148">maxUrl</CSharpValue>
+                            </InArgument>
+                          </uix:NGoToUrl.Url>
+                        </uix:NGoToUrl>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" DisplayName="Output of the cheapest car" sap:VirtualizedContainerService.HintSize="449.6,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_10">
+                    <ui:MessageBox.ChosenButton>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_58">GlobalVariablesNamespace.GlobalVariables.userChoice</CSharpReference>
+                      </OutArgument>
+                    </ui:MessageBox.ChosenButton>
+                    <ui:MessageBox.Text>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_134">$"Самая дешевая машина:\nName: {GlobalVariablesNamespace.GlobalVariables.minPriceRow["Name"]}\nUrl: {GlobalVariablesNamespace.GlobalVariables.minPriceRow["Url"]}\nPrice: {GlobalVariablesNamespace.GlobalVariables.minPriceRow["Price"]}";</CSharpValue>
+                      </InArgument>
+                    </ui:MessageBox.Text>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:MessageBox>
+                  <If sap:VirtualizedContainerService.HintSize="449.6,462.4" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_144">GlobalVariablesNamespace.GlobalVariables.userChoice == "Yes"</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,194.4" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="353.6,105.6" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Version="V3">
+                          <uix:NGoToUrl.Url>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_149">minUrl</CSharpValue>
+                            </InArgument>
+                          </uix:NGoToUrl.Url>
+                        </uix:NGoToUrl>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
                 </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_66">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </If.Else>
-            </If>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAL6SURBVGhD1ZpPitRAFMZ7KTg2XkDwAC48wqy9gTeYG3iDTutGN+oFZty5ctwJLsadi8F2p0jRuNBhkLQMMooMsb6aFHQ/vqp6lcTp1Ac/aJJ6Ve9L/Us6mTDtVGZ3OvvyZFqZ4+ncGEttaa4YtGluzM1b5LJTfd5t0wvrZmVuuwBe4Rgw12yObbqbuv7I3LUFtnGlc6mRa5v2pXDlcUIUHDP1Rk/YAxjnrOBowVB3ybsJSwqUgJvY07ldbcjJIrCr02Tkq06ch+a4yPG/hoGBQVafW4+Xzd7haXOwOGsWJ3+a1flF44XfOIZzKIOyrI4O1DDATqi58/xr8+z9z42ENYIZxLI6c+hloDqqsxOXQh2sbi2dDODKYUgMJdTVtTeyDaCh5epv2/RwQp1dTGQb+B/Je6Encid4lgFMVo0wL/btJJ3Z8Q1effqlNo42WNsh1AbQvSkhyXsvvtF4sPf6VGUkVodEbQDLXkz7H8/U3Z+q62h5TuMYKgOpq48hwuJiIMmYtBdDZQC7Z0gY711WD8TE9pAHb37QOInKwKG9wiFhsrIYDU8ji4K2V1UGFt/Dm1bOhJMgNiRMdhYjURmIiZXXgnEeE4uRbNUAiImVl/Q20PfWOCZWXqIyENt8es2Bg/AcgFiMRGUgtgrhVoHFaEhtaCxGojKANTmk1e+LTsMI+0DqtoLFSVQGUqsFeojFxYj1qheLk6gMgNTWj+HA4hipoePFYiVqA7FNx8vdjdqJyeIBzuU8ybE6JGoDILb1rwtGcJX98wB+p8Y7E8tBkmUAcyF2WzG0WA6SLANAs3oMJda+JNsAuCoTrG1JJwOe2bu6baqbUv8psTYlvQwA9AaeCXKExGEecyr2nMzak/Q24IERJIMHkQ9ioiNhHINRlGE79/2XJ+7cOrIMAwZKerUkcX/uFv73+uW7YHZy9Lj3ZMW/Yir+JR9U6Hsy45KHin/RDRX9qYFX2xOjXVYx1IMfe6zLf27Tzo2tfm7jlnn3uY0hn9tMJv8A+/ShRapKXKEAAAAASUVORK5CYII=" InformativeScreenshot="961137738a3370870bb644c457f08abe.jpg" Selector="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" Title="av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые." Url="https://av.by/" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAL6SURBVGhD1ZpPitRAFMZ7KTg2XkDwAC48wqy9gTeYG3iDTutGN+oFZty5ctwJLsadi8F2p0jRuNBhkLQMMooMsb6aFHQ/vqp6lcTp1Ac/aJJ6Ve9L/Us6mTDtVGZ3OvvyZFqZ4+ncGEttaa4YtGluzM1b5LJTfd5t0wvrZmVuuwBe4Rgw12yObbqbuv7I3LUFtnGlc6mRa5v2pXDlcUIUHDP1Rk/YAxjnrOBowVB3ybsJSwqUgJvY07ldbcjJIrCr02Tkq06ch+a4yPG/hoGBQVafW4+Xzd7haXOwOGsWJ3+a1flF44XfOIZzKIOyrI4O1DDATqi58/xr8+z9z42ENYIZxLI6c+hloDqqsxOXQh2sbi2dDODKYUgMJdTVtTeyDaCh5epv2/RwQp1dTGQb+B/Je6Encid4lgFMVo0wL/btJJ3Z8Q1effqlNo42WNsh1AbQvSkhyXsvvtF4sPf6VGUkVodEbQDLXkz7H8/U3Z+q62h5TuMYKgOpq48hwuJiIMmYtBdDZQC7Z0gY711WD8TE9pAHb37QOInKwKG9wiFhsrIYDU8ji4K2V1UGFt/Dm1bOhJMgNiRMdhYjURmIiZXXgnEeE4uRbNUAiImVl/Q20PfWOCZWXqIyENt8es2Bg/AcgFiMRGUgtgrhVoHFaEhtaCxGojKANTmk1e+LTsMI+0DqtoLFSVQGUqsFeojFxYj1qheLk6gMgNTWj+HA4hipoePFYiVqA7FNx8vdjdqJyeIBzuU8ybE6JGoDILb1rwtGcJX98wB+p8Y7E8tBkmUAcyF2WzG0WA6SLANAs3oMJda+JNsAuCoTrG1JJwOe2bu6baqbUv8psTYlvQwA9AaeCXKExGEecyr2nMzak/Q24IERJIMHkQ9ioiNhHINRlGE79/2XJ+7cOrIMAwZKerUkcX/uFv73+uW7YHZy9Lj3ZMW/Yir+JR9U6Hsy45KHin/RDRX9qYFX2xOjXVYx1IMfe6zLf27Tzo2tfm7jlnn3uY0hn9tMJv8A+/ShRapKXKEAAAAASUVORK5CYII=" InformativeScreenshot="961137738a3370870bb644c457f08abe.jpg" Selector="&lt;html app='chrome.exe' title='av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые.' /&gt;" Title="av.by — купить, продать авто в Беларуси. Автомобили с пробегом и новые." Url="https://av.by/" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BrowserOperationException" sap:VirtualizedContainerService.HintSize="611.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BrowserOperationException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BrowserOperationException" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn">
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_151">"Error opening site: " + exception.Message</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
   </Sequence>
 </Activity>
